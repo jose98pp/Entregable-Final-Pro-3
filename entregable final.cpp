@@ -27,8 +27,8 @@ private:
 public:
 	void generarDatosAleatorios() override {
 		// Arrays de nombres y apellidos fijos
-		string nombresFijos[NUM_ELEMENTOS] = {"Juan", "MarÌa", "Carlos", "Laura"};
-		string apellidosFijos[NUM_ELEMENTOS] = {"Gonz·lez", "RodrÌguez", "MartÌnez", "LÛpez"};
+		string nombresFijos[NUM_ELEMENTOS] = {"Juan", "Mar√≠a", "Carlos", "Laura"};
+		string apellidosFijos[NUM_ELEMENTOS] = {"Gonz√°lez", "Rodr√≠guez", "Mart√≠nez", "L√≥pez"};
 		
 		srand(time(0));
 		for (int i = 0; i < NUM_ELEMENTOS; ++i) {
@@ -40,14 +40,14 @@ public:
 			apellidos[i] = apellidosFijos[indiceApellido];
 			emails[i] = nombres[i] + "." + apellidos[i] + "@example.com";
 			telefonos[i] = "123456789";
-			direcciones[i] = "DirecciÛn" + to_string(i + 1);
+			direcciones[i] = "Direcci√≥n" + to_string(i + 1);
 		}
 	}
 	
 	void imprimir(bool enColumnas) const override {
 		if (enColumnas) {
 			cout << "Listado de Usuarios (en columnas):\n";
-			cout << "ID,Nombre,Apellido,Email,TelÈfono,DirecciÛn\n";
+			cout << "ID,Nombre,Apellido,Email,Tel√©fono,Direcci√≥n\n";
 			for (int i = 0; i < NUM_ELEMENTOS; ++i) {
 				cout << i + 1 << "," << nombres[i] << "," << apellidos[i] << "," << emails[i] << "," << telefonos[i] << "," << direcciones[i] << "\n";
 			}
@@ -58,21 +58,21 @@ public:
 				cout << "Nombre: " << nombres[i] << endl;
 				cout << "Apellido: " << apellidos[i] << endl;
 				cout << "Email: " << emails[i] << endl;
-				cout << "TelÈfono: " << telefonos[i] << endl;
-				cout << "DirecciÛn: " << direcciones[i] << endl;
+				cout << "Tel√©fono: " << telefonos[i] << endl;
+				cout << "Direcci√≥n: " << direcciones[i] << endl;
 				cout << endl;
 			}
 		}
 	}
 	
 	void buscar(const string& nombreApellido) const override {
-		cout << "B˙squeda de Usuario por Nombre y Apellido: " << nombreApellido << endl;
+		cout << "B√∫squeda de Usuario por Nombre y Apellido: " << nombreApellido << endl;
 		bool encontrado = false;
 		for (int i = 0; i < NUM_ELEMENTOS; ++i) {
 			string nombreCompleto = nombres[i] + " " + apellidos[i];
 			if (nombreCompleto.find(nombreApellido) != string::npos) {
 				cout << "Usuario encontrado:\n";
-				cout << "ID,Nombre,Apellido,Email,TelÈfono,DirecciÛn\n";
+				cout << "ID,Nombre,Apellido,Email,Tel√©fono,Direcci√≥n\n";
 				cout << i + 1 << "," << nombres[i] << "," << apellidos[i] << "," << emails[i] << "," << telefonos[i] << "," << direcciones[i] << "\n";
 				encontrado = true;
 			}
@@ -90,7 +90,7 @@ public:
 	void generarDatosAleatorios() override {
 		// Arrays de nombres y apellidos fijos
 		string nombresFijos[NUM_ELEMENTOS] = {"Pedro", "Ana", "Luis", "Elena"};
-		string apellidosFijos[NUM_ELEMENTOS] = {"S·nchez", "GÛmez", "DÌaz", "PÈrez"};
+		string apellidosFijos[NUM_ELEMENTOS] = {"S√°nchez", "G√≥mez", "D√≠az", "P√©rez"};
 		
 		srand(time(0));
 		for (int i = 0; i < NUM_ELEMENTOS; ++i) {
@@ -105,7 +105,7 @@ public:
 			string horario;
 			switch (rand() % 3) {
 			case 0:
-				horario = "MaÒana";
+				horario = "Ma√±ana";
 				break;
 			case 1:
 				horario = "Tarde";
@@ -140,7 +140,7 @@ public:
 	}
 	
 	void buscar(const string& nombreApellido) const override {
-		cout << "B˙squeda de Bibliotecario por Nombre y Apellido: " << nombreApellido << endl;
+		cout << "B√∫squeda de Bibliotecario por Nombre y Apellido: " << nombreApellido << endl;
 		bool encontrado = false;
 		for (int i = 0; i < NUM_ELEMENTOS; ++i) {
 			string nombreCompleto = nombres[i] + " " + apellidos[i];
@@ -163,23 +163,23 @@ private:
 	string categorias[NUM_ELEMENTOS];
 public:
 	void generarDatosAleatorios() {
-		// Arrays de tÌtulos de libros fijos
-		string titulosFijos[NUM_ELEMENTOS] = {"El seÒor de los anillos", "Cien aÒos de soledad", "Don Quijote de la Mancha", "1984"};
-		string autoresFijos[NUM_ELEMENTOS] = {"J.R.R. Tolkien", "Gabriel GarcÌa M·rquez", "Miguel de Cervantes", "George Orwell"};
+		// Arrays de t√≠tulos de libros fijos
+		string titulosFijos[NUM_ELEMENTOS] = {"El se√±or de los anillos", "Cien a√±os de soledad", "Don Quijote de la Mancha", "1984"};
+		string autoresFijos[NUM_ELEMENTOS] = {"J.R.R. Tolkien", "Gabriel Garc√≠a M√°rquez", "Miguel de Cervantes", "George Orwell"};
 		
 		for (int i = 0; i < NUM_ELEMENTOS; ++i) {
-			// Generar datos aleatorios usando los tÌtulos de libros fijos
+			// Generar datos aleatorios usando los t√≠tulos de libros fijos
 			int indiceTitulo = rand() % NUM_ELEMENTOS;
 			titulos[i] = titulosFijos[indiceTitulo];
 			autores[i] = autoresFijos[indiceTitulo];
-			categorias[i] = "CategorÌa" + to_string(i + 1);
+			categorias[i] = "Categor√≠a" + to_string(i + 1);
 		}
 	}
 	
 	void imprimir(bool enColumnas) const {
 		if (enColumnas) {
 			cout << "Listado de Libros (en columnas):\n";
-			cout << "ID,TÌtulo,Autor,CategorÌa\n";
+			cout << "ID,T√≠tulo,Autor,Categor√≠a\n";
 			for (int i = 0; i < NUM_ELEMENTOS; ++i) {
 				cout << i + 1 << "," << titulos[i] << "," << autores[i] << "," << categorias[i] << "\n";
 			}
@@ -187,21 +187,21 @@ public:
 			cout << "Listado de Libros (en filas):\n";
 			for (int i = 0; i < NUM_ELEMENTOS; ++i) {
 				cout << "ID: " << i + 1 << endl;
-				cout << "TÌtulo: " << titulos[i] << endl;
+				cout << "T√≠tulo: " << titulos[i] << endl;
 				cout << "Autor: " << autores[i] << endl;
-				cout << "CategorÌa: " << categorias[i] << endl;
+				cout << "Categor√≠a: " << categorias[i] << endl;
 				cout << endl;
 			}
 		}
 	}
 	
 	void buscar(const string& titulo) const {
-		cout << "B˙squeda de Libro por TÌtulo: " << titulo << endl;
+		cout << "B√∫squeda de Libro por T√≠tulo: " << titulo << endl;
 		bool encontrado = false;
 		for (int i = 0; i < NUM_ELEMENTOS; ++i) {
 			if (titulos[i] == titulo) {
 				cout << "Libro encontrado:\n";
-				cout << "ID,TÌtulo,Autor,CategorÌa\n";
+				cout << "ID,T√≠tulo,Autor,Categor√≠a\n";
 				cout << i + 1 << "," << titulos[i] << "," << autores[i] << "," << categorias[i] << "\n";
 				encontrado = true;
 			}
@@ -241,9 +241,9 @@ int main() {
 		cout << "MENU PRINCIPAL\n";
 		cout << "1) Llenado de datos\n";
 		cout << "2) Listados\n";
-		cout << "3) B˙squedas\n";
+		cout << "3) B√∫squedas\n";
 		cout << "0) Salir\n";
-		cout << "Ingrese opciÛn: ";
+		cout << "Ingrese opci√≥n: ";
 		cin >> opcionMenuPrincipal;
 		opcionMenuPrincipal = tolower(opcionMenuPrincipal);
 		
@@ -263,8 +263,8 @@ int main() {
 				cout << "a) Listado Usuarios\n";
 				cout << "b) Listado Bibliotecarios\n";
 				cout << "c) Listado Libros\n";
-				cout << "x) Volver al men˙ principal\n";
-				cout << "Ingrese opciÛn: ";
+				cout << "x) Volver al men√∫ principal\n";
+				cout << "Ingrese opci√≥n: ";
 				cin >> opcionListados;
 				opcionListados = tolower(opcionListados);
 				
@@ -272,7 +272,7 @@ int main() {
 				char opcionFormatoImpresion;
 				
 				if (opcionListados != 'x') {
-					cout << "øCÛmo deseas imprimir los datos? (c para columnas, f para filas): ";
+					cout << "¬øC√≥mo deseas imprimir los datos? (c para columnas, f para filas): ";
 					cin >> opcionFormatoImpresion;
 					imprimirEnColumnas = (tolower(opcionFormatoImpresion) == 'c');
 				}
@@ -290,11 +290,11 @@ int main() {
 				case 'x':
 					break;
 				default:
-					cout << "OpciÛn no v·lida. Intente de nuevo.\n";
+					cout << "Opci√≥n no v√°lida. Intente de nuevo.\n";
 				}
 				
 				if (opcionListados != 'x') {
-					cout << "\nPresione Enter para volver al men˙ principal...";
+					cout << "\nPresione Enter para volver al men√∫ principal...";
 					cin.ignore();
 					cin.get();
 				}
@@ -307,11 +307,11 @@ int main() {
 			do {
 				system("cls");
 				cout << "SUBMENU BUSQUEDAS\n";
-				cout << "a) B˙squeda de Usuario (Nombre y Apellido)\n";
-				cout << "b) B˙squeda de Bibliotecario (Nombre y Apellido)\n";
-				cout << "c) B˙squeda de Libro (TÌtulo)\n";
-				cout << "x) Volver al men˙ principal\n";
-				cout << "Ingrese opciÛn: ";
+				cout << "a) B√∫squeda de Usuario (Nombre y Apellido)\n";
+				cout << "b) B√∫squeda de Bibliotecario (Nombre y Apellido)\n";
+				cout << "c) B√∫squeda de Libro (T√≠tulo)\n";
+				cout << "x) Volver al men√∫ principal\n";
+				cout << "Ingrese opci√≥n: ";
 				cin >> opcionBusqueda;
 				opcionBusqueda = tolower(opcionBusqueda);
 				
@@ -334,7 +334,7 @@ int main() {
 				}
 				case 'c': {
 					string tituloBusqueda;
-					cout << "Ingrese el tÌtulo del libro que desea buscar: ";
+					cout << "Ingrese el t√≠tulo del libro que desea buscar: ";
 					cin.ignore();
 					getline(cin, tituloBusqueda);
 					gestorLibros.buscar(tituloBusqueda);
@@ -343,11 +343,11 @@ int main() {
 				case 'x':
 					break;
 				default:
-					cout << "OpciÛn no v·lida. Intente de nuevo.\n";
+					cout << "Opci√≥n no v√°lida. Intente de nuevo.\n";
 				}
 				
 				if (opcionBusqueda != 'x') {
-					cout << "\nPresione Enter para volver al men˙ principal...";
+					cout << "\nPresione Enter para volver al men√∫ principal...";
 					cin.ignore();
 					cin.get();
 				}
@@ -359,11 +359,11 @@ int main() {
 			cout << "Saliendo...\n";
 			break;
 		default:
-			cout << "OpciÛn no v·lida. Intente de nuevo.\n";
+			cout << "Opci√≥n no v√°lida. Intente de nuevo.\n";
 		}
 		
 		if (opcionMenuPrincipal != '0') {
-			cout << "\nPresione Enter para volver al men˙ principal...";
+			cout << "\nPresione Enter para volver al men√∫ principal...";
 			cin.ignore();
 			cin.get();
 		}
